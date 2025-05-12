@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Navigate, Routes } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
+import { Toaster } from 'react-hot-toast';
 
 // styles
 import './App.css';
@@ -14,11 +15,13 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import OnlineUsers from './components/OnlineUsers';
 
+
 function App() {
   const { authIsReady, user } = useAuthContext();
 
   return (
     <div className="App">
+      <Toaster position="top-right" />
       {authIsReady && (
         <BrowserRouter>
           {user && <Sidebar />}

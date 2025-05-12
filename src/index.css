@@ -80,3 +80,90 @@ textarea {
   padding: 8px;
   margin: 10px 0;
 }
+/* Add these new styles to your existing index.css */
+
+/* auth form styles */
+.auth-form {
+  max-width: 360px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Enhance existing input styles */
+.input,
+.auth-form input {
+  width: 100%;
+  padding: 8px 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+  color: var(--heading-color);
+  transition: border-color 0.3s ease;
+}
+
+.input:focus,
+.auth-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.input-error {
+  border-color: var(--highlight-color);
+}
+
+.error-message {
+  color: var(--highlight-color);
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Enhanced error container */
+.error-container {
+  background: rgba(209, 50, 103, 0.1);
+  color: var(--highlight-color);
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 1rem;
+  border: 1px solid var(--highlight-color);
+}
+
+/* Enhanced button styles */
+.btn.loading {
+  position: relative;
+  color: transparent;
+  background: var(--primary-color);
+}
+
+.btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -8px;
+  border: 2px solid white;
+  border-radius: 50%;
+  border-right-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn:disabled {
+  background: var(--text-color);
+  border-color: var(--text-color);
+  cursor: not-allowed;
+}
